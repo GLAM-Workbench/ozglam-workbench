@@ -1,5 +1,3 @@
 .ipynb_checkpoints
 *.pyc
 .DS_Store
-Trove/TroveHarvester/data/*
-Trove/data/*
