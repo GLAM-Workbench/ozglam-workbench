@@ -6,3 +6,5 @@ plotly==2.5.1
 Pillow==5.1.0
 tinydb==3.8.1.post1
 robobrowser==0.5.3
+lxml==4.2.1
+beautifulsoup4==4.6.0
