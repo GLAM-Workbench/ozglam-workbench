@@ -1,0 +1,3 @@
+[submodule "RecordSearch/recordsearch_tools"]
+	path = RecordSearch/recordsearch_tools
+	url = https://github.com/wragge/recordsearch_tools.git
