@@ -3,3 +3,5 @@ troveharvester==0.1.12
 pandas==0.22.0
 numpy==1.14.2
 plotly==2.5.1
+Pillow==5.1.0
+tinydb==3.8.1.post1
