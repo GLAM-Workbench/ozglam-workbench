@@ -14,9 +14,9 @@ Like most of my projects this is in itself an experiment. I'm still learning wha
 
 ## Potential uses
 
-* Research! The workbench will include live working versions of tools like TroveHarvester and my assorted RecordSearch harvesters, as well as examples of how you can start analysing your results.
-* Education! There'll be a tutorials with live, working code -- play with collections while picking up some Python.
-* Workshops! No more battling with multiple operating systems and locked down computer labs (at least I hope so...).
+* **Research!** The workbench will include live working versions of tools like TroveHarvester and my assorted RecordSearch harvesters, as well as examples of how you can start analysing your results.
+* **Education!** There'll be a tutorials with live, working code -- play with collections while picking up some Python.
+* **Workshops!** No more battling with multiple operating systems and locked down computer labs (at least I hope so...).
 
 ## Current outline (this will change!)
 
@@ -65,6 +65,9 @@ Like most of my projects this is in itself an experiment. I'm still learning wha
 
     - More sections dealing with particular collections, datasets, or APIs
 
+## Support me
+
+If you think this is a worthwhile endeavour, feel free to [support me on Patreon](https://www.patreon.com/timsherratt).
 
 ## Using the workbench
 
