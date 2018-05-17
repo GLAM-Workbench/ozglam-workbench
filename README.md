@@ -12,6 +12,14 @@ So here we are. My plan is to use Jupyter, GitHub, [Binder](https://mybinder.org
 
 Like most of my projects this is in itself an experiment. I'm still learning what's possible and what works. But I'm hopeful.
 
+## Subject-specific workbenches
+
+As well as this generic workbench, I'm creating a few subject-specific versions that come complete with pre-harvested data, ready to explore. So far there's:
+
+* [Series in the National Archives of Australia relating to the White Australia Policy](https://github.com/wragge/ozglam-workbench-naa-wap)
+* [Series in the National Archives of Australia with content recorded by the Australian Security Intelligence Organisation (ASIO)](https://github.com/wragge/ozglam-workbench-naa-asio)
+* Records of Resistance (coming soon...)
+
 ## Potential uses
 
 * **Research!** The workbench will include live working versions of tools like TroveHarvester and my assorted RecordSearch harvesters, as well as examples of how you can start analysing your results.
