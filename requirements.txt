@@ -1,5 +1,5 @@
 requests==2.18.4
-troveharvester==0.1.3
+troveharvester
 pandas==0.22.0
 numpy==1.14.2
 plotly==2.5.1
