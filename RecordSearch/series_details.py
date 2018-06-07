@@ -65,7 +65,7 @@ def make_df_all(series_list):
     # Loop through the list of series in this repo
     for series in series_list:
         # Open the CSV of each series harvest as a data frame
-        df = pd.read_csv(os.path.join('../data/RecordSearch/{}.csv'.format(series.replace('/', '-')), parse_dates=['start_date', 'end_date'])
+        df = pd.read_csv('../data/RecordSearch/{}.csv'.format(series.replace('/', '-')), parse_dates=['start_date', 'end_date'])
         # Extract a summary of each series and add it to the list of summaries
         summaries.append(make_summary(series, df, include_titles=False))
 
