@@ -77,15 +77,30 @@ As well as this generic workbench, I'm creating a few subject-specific versions 
 
 If you think this is a worthwhile endeavour, feel free to [support me on Patreon](https://www.patreon.com/timsherratt).
 
+----
+
 ## Using the workbench
 
-### View on GitHub
+### View the notebooks
 
-You can view the contents on GitHub, but note that these will be static versions so you won't be able to run any of the code.
+If you just want to have a look around, you can browse the notebooks in this repository. Even better, you can [explore them using the Jupyter Project's Notebook Viewer](https://nbviewer.jupyter.org/github/wragge/ozglam-workbench/blob/master/1-Introduction-and-table-of-contents.ipynb). But these will be static, read-only, versions -- you won't be able to run any of the code.
+
+### Use the notebooks online with MyBinder
+
+The easiest way to use the notebooks is on MyBinder. Just click on the button!
+
+[![Binder](https://mybinder.org/badge.svg)](https://mybinder.org/v2/gh/wragge/ozglam-workbench/master)
+
+MyBinder launches the notebooks in a custom computing environment with all the software you'll need pre-installed. You can explore, harvest, and analyse cultural heritage data without ever leaving your web browser.
+
+I've harvested thousands of Trove newspaper articles using MyBinder, but there are some limitations. The main one is that the environments it creates are only temporary. There's no way of saving your session and going back to it later. So if you harvest data, you'll need to download it before the session ends. But don't worry, I've provided a few handy tools to make downloading easy.
+
+MyBinder sessions will also shut down after about 10 minutes of inactivity. So don't go and have lunch without making sure you've finished what you're doing.
 
 ### Run locally with Jupyter
 
-If you have Jupyter installed, you can clone this repository, and then run Jupyter:
+If you have [Jupyter installed](http://jupyter.org/install) on your system, you can clone this repository and then run fire up the notebooks:
+
 
 ```
 git clone https://github.com/wragge/ozglam-workbench.git
@@ -93,23 +108,19 @@ cd ozglam-workbench
 jupyter notebook
 ```
 
-### Run online with MyBinder
-
-To use a live version without installing any software, try MyBinder:
-
-[![Binder](https://mybinder.org/badge.svg)](https://mybinder.org/v2/gh/wragge/ozglam-workbench/master)
-
-MyBinder launches the notebooks in a custom computing environment with all the software you'll need pre-installed. But note that these environments aren't persistent, so you'll need to make sure you download any data you want to keep.
+The workbench will open in your browser.
 
 ### Run locally with Docker
 
-I've created a Docker image that includes these notebooks and all the necessary software. Assuming you have Docker installed, just open up a terminal and run:
+I've created a Docker image that includes these notebooks and all the necessary software. Assuming you have [Docker installed](https://docs.docker.com/install/), just open up a terminal and run:
 
 ``` shell
-docker run -it --name=Workbench -v WorkbenchData:/home/jovyan/workbench -p 8888:8888 wragge/ozglam-workbench
+docker run -it --name=Workbench -v MyData:/home/jovyan/data -v MyWorkbench:/home/jovyan/workbench -p 8888:8888 wragge/ozglam-workbench
 ```
 
-This creates a persistent data volume and runs the workbench image. Once Jupyter starts up it'll display a url in the terminal that looks something like:
+This command downloads the image and builds a container to run the workbench. The `-v MyData:/home/jovyan/data` bit creates a persistent volume called `MyData` where any data you harvest will be stored. You can update the image, create new containers, and still access your data. Similarly, `-v MyWorkbench:/home/jovyan/workbench` creates a persistent volume to store the notebooks themselves. This means that any changes you make to the notebooks will also be stored independently of the container itself. This should give you a bit of flexibility in how you use the workbench, and allow you to customise it to your needs.
+
+Once Jupyter starts up it'll display a url in the terminal that looks something like:
 
 ```
 http://localhost:8888/?token=262718512d11cc3efcb1b2878f4jja9uca071924e328d554
@@ -117,7 +128,7 @@ http://localhost:8888/?token=262718512d11cc3efcb1b2878f4jja9uca071924e328d554
 
 Just copy and paste this into your browser to open the notebooks.
 
-To restart the `WorkBench` container using the same data volume:
+To restart the `WorkBench` container using the same data volumes:
 
 ``` shell
 docker start -ai Workbench
