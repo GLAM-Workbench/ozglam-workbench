@@ -52,7 +52,7 @@ def display_summary(series, df):
     table += '<tr><th style="text-align: left">Date of earliest content</th><td style="text-align: left">{}</td></tr>'.format(summary['date_from'])
     table += '<tr><th style="text-align: left">Date of latest content</th><td style="text-align: left">{}</td></tr>'.format(summary['date_to'])
     table += '</table>'
-    table += '<ul><li><b><a href="https://github.com/wragge/ozglam-workbench-naa-asio/blob/master/RecordSearch/data/{}.csv">Download item data (CSV format)</a></b></li>'.format(series.replace('/', '-'))
+    table += '<ul><li><b><a href="https://github.com/wragge/ozglam-workbench/blob/master/data/RecordSearch/{}.csv">Download item data (CSV format)</a></b></li>'.format(series.replace('/', '-'))
     table += '<li><b><a href="http://www.naa.gov.au/cgi-bin/Search?O=S&Number={}">View details on RecordSearch</a></b></li></ul>'.format(series)
     
     display(HTML(table))
@@ -65,7 +65,7 @@ def make_df_all(series_list):
     # Loop through the list of series in this repo
     for series in series_list:
         # Open the CSV of each series harvest as a data frame
-        df = pd.read_csv(os.path.join('data', '{}.csv'.format(series.replace('/', '-'))), parse_dates=['start_date', 'end_date'])
+        df = pd.read_csv(os.path.join('../data/RecordSearch/{}.csv'.format(series.replace('/', '-')), parse_dates=['start_date', 'end_date'])
         # Extract a summary of each series and add it to the list of summaries
         summaries.append(make_summary(series, df, include_titles=False))
 
@@ -210,7 +210,7 @@ def plot_dates(df):
 def plot_all_dates(series_list):
     sdfs = []
     for series in series_list:
-        sdf = pd.read_csv(os.path.join('data', '{}.csv'.format(series.replace('/', '-'))), parse_dates=['start_date', 'end_date'])
+        sdf = pd.read_csv('../data/RecordSearch/{}.csv'.format(series.replace('/', '-')), parse_dates=['start_date', 'end_date'])
         sdfs.append(sdf)
     combined_df = pd.concat(sdfs)
     fig = plot_dates(combined_df)
